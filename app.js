@@ -32,7 +32,7 @@ pubnub.subscribe({
   callback: function(message) {
     debug('Got message on state channel: %s', JSON.stringify(message));
     if (message.servoId === process.env.SERVO_ID) return; // Don't send message to me
-    var url = 'http://localhost:' + (5555 + message.servoId) + '/api/state';
+    var url = 'http://pubnub-12345.onmodulus.net/api/state';
     debug('Posting too: %s and sending %s', url, JSON.stringify(users));
     request.post(url, {
       headers: {
